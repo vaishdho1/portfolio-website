@@ -1,15 +1,86 @@
+/* Basic styles for header and menu */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  text-align: center;
-  color: #333;
 }
 
 header {
-  background-color: #4CAF50;
+  background-color: #333;
   color: white;
-  padding: 1em 0;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Menu bar styling */
+.menu-bar {
+  background-color: #333;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Styled Menu Toggle Button */
+.menu-toggle {
+  background: linear-gradient(135deg, #9b59b6, #6a0dad); /* Light to dark violet gradient */
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  font-family: "Arial Black", sans-serif;
+  cursor: pointer;
+  border-radius: 12px; /* Curved corners */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Menu options hidden by default */
+.menu-options {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  background-color: #333;
+  width: 100%;
+}
+
+.menu-options a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+.menu-options a:hover {
+  background-color: #575757;
+}
+
+/* Show menu options on hover */
+.menu-bar:hover .menu-options {
+  display: flex;
+}
+
+/* For smaller screens */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-options {
+    display: none;
+  }
+
+  .menu-bar.active .menu-options {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
 }
 
 section#projects {
